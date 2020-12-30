@@ -10,7 +10,7 @@ class App extends Component {
     //   </div>
     // );
     // h1 is interpreted as text
-    return React.createElement('div', null, React.createElement('h1', null, 'Does this work now?'))
+    return React.createElement('div', { className: 'App' }, React.createElement('h1', null, 'Does this work now?'))
   }
 }
 
