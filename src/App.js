@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Person from './Person/Person';
 
+// app is our root ocmponent
 class App extends Component {
   render() {
     return (
@@ -8,6 +10,7 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is my next paragraph</p>
+        <Person />
       </div>
     );
     // h1 is interpreted as text - this is the same as above, just much more cumbersome
