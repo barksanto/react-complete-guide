@@ -13,8 +13,15 @@ class App extends Component {
     ]
   }
 
-  switcNameHandler = () => { // normal es6 arrow function
-    console.log('button has been clicked!!');
+  switcNameHandler = () => { // normal es6 arrow function // must use this syntax so we can use 'this'
+    // console.log('button has been clicked!!');
+    this.setState({
+      persons: [
+        { name: "Bananamamamama", age: 27 },
+        { name: "Mango", age: 6 },
+        { name: "Mikayla", age: 100 }
+      ]
+    })
   }
 
   render() {
