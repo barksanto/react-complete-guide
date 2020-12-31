@@ -1,4 +1,4 @@
-import React from "react"; // must import react in each ocmponent file
+import React from "react"; // must import react in each component file
 
 // this is the preferred way to write functions.
 const person = () => {
