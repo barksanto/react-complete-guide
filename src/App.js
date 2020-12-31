@@ -36,7 +36,8 @@ class App extends Component { //no render method on functional components
         <h1>Hi, I'm a React App</h1>
         <p>This is my next paragraph</p>
         {/* same as below, however it returns a function call with an explicit return */}
-        <button onClick={() => this.switchNameHandler()}>Switch Name</button>
+        {/* not reccommended if we dont have to */}
+        <button onClick={() => this.switchNameHandler('bananamama')}>Switch Name</button>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
         <Person
           name={this.state.persons[0].name}
