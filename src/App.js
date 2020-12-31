@@ -36,9 +36,18 @@ class App extends Component { //no render method on functional components
         <h1>Hi, I'm a React App</h1>
         <p>This is my next paragraph</p>
         <button onClick={this.switchNameHandler}>Switch Name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} click={this.switchNameHandler}>My Hobbies : pizza</Person>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
+        {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+          // added handler to this element. passinga  reference to the switchNameHandler
+          click={this.switchNameHandler}>My Hobbies : pizza</Person>
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age} />
+        <Person
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age} />
       </div>
     );
   }
