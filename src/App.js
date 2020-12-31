@@ -17,11 +17,11 @@ class App extends Component { //no render method on functional components
     otherState: 'some other value'
   };
 
-  switchNameHandler = () => { // normal es6 arrow function // must use this syntax so we can use 'this'
+  switchNameHandler = (newName) => { // normal es6 arrow function // must use this syntax so we can use 'this'
     // console.log('button has been clicked!!');
     this.setState({
       persons: [
-        { name: "Bananamamamama", age: 27 },
+        { name: newName, age: 27 },
         { name: "Mango", age: 6 },
         { name: "Mikayla", age: 100 }
       ]
@@ -35,13 +35,14 @@ class App extends Component { //no render method on functional components
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is my next paragraph</p>
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        {/* same as below, however it returns a function call with an explicit return */}
+        <button onClick={() => this.switchNameHandler()}>Switch Name</button>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
           // added handler to this element. passinga  reference to the switchNameHandler
-          click={this.switchNameHandler}>My Hobbies : pizza</Person>
+          click={this.switchNameHandler.bind(this, 'BARKLEYMANGUEIRASANTO')}>My Hobbies : pizza</Person>
         <Person
           name={this.state.persons[1].name}
           age={this.state.persons[1].age} />
