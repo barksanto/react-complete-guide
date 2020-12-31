@@ -14,6 +14,8 @@ class App extends Component {
         <p>This is my next paragraph</p>
         <Person />
         <Person />
+        <Person />
+        
       </div>
     );
     // h1 is interpreted as text - this is the same as above, just much more cumbersome
