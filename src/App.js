@@ -28,13 +28,22 @@ class App extends Component { //no render method on functional components
     })
   }
 
+  nameChangedHandler = (event) => {
+    this.setState({
+      persons: [
+        { name: "Barkley", age: 27 },
+        { name: event.target.value, age: 6 },
+        { name: "Mikayla", age: 20 }
+      ]
+    })
+  }
+
   render() {
     return (
       /* We will nest the rest of our components in this div also */
       /* We render by using the same name of the component we imported*/
       <div className="App">
         <h1>Hi, I'm a React App</h1>
-        <p>This is my next paragraph</p>
         {/* same as below, however it returns a function call with an explicit return */}
         {/* not reccommended if we dont have to */}
         <button onClick={() => this.switchNameHandler('bananamama')}>Switch Name</button>
@@ -42,11 +51,12 @@ class App extends Component { //no render method on functional components
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
-          // added handler to this element. passinga  reference to the switchNameHandler
+          // added handler to this element. passing a  reference to the switchNameHandler
           click={this.switchNameHandler.bind(this, 'BARKLEYMANGUEIRASANTO')}>My Hobbies : pizza</Person>
         <Person
           name={this.state.persons[1].name}
-          age={this.state.persons[1].age} />
+          age={this.state.persons[1].age}
+          changed={this.nameChangedHandler} />
         <Person
           name={this.state.persons[2].name}
           age={this.state.persons[2].age} />
