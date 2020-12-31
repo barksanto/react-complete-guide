@@ -12,10 +12,10 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is my next paragraph</p>
-        <Person />
-        <Person />
-        <Person />
-        
+        <Person name="Barkley" age="27">My Hobbies : pizza</Person>
+        <Person name="Alex" age="27" />
+        <Person name="Mango" age="6" />
+
       </div>
     );
     // h1 is interpreted as text - this is the same as above, just much more cumbersome
