@@ -39,6 +39,17 @@ class App extends Component { //no render method on functional components
   }
 
   render() {
+
+    const style = {
+      backhroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px;',
+      cursor: 'pointer',
+      borderRadius: '8px'
+
+    };
+
     return (
       /* We will nest the rest of our components in this div also */
       /* We render by using the same name of the component we imported*/
@@ -46,7 +57,8 @@ class App extends Component { //no render method on functional components
         <h1>Hi, I'm a React App</h1>
         {/* same as below, however it returns a function call with an explicit return */}
         {/* not reccommended if we dont have to */}
-        <button onClick={() => this.switchNameHandler('bananamama')}>Switch Name</button>
+        <button style={style}
+          onClick={() => this.switchNameHandler('bananamama')}>Switch Name</button>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
         <Person
           name={this.state.persons[0].name}
