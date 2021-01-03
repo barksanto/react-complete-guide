@@ -14,7 +14,8 @@ class App extends Component { //no render method on functional components
       { name: "Mango", age: 6 },
       { name: "Mikayla", age: 20 }
     ],
-    otherState: 'some other value'
+    otherState: 'some other value',
+    showPersons: false
   };
 
   switchNameHandler = (newName) => { // normal es6 arrow function // must use this syntax so we can use 'this'
@@ -38,13 +39,19 @@ class App extends Component { //no render method on functional components
     })
   }
 
+
+  togglePersonsHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({ showPersons: !doesShow });
+  }
+
   render() {
 
     const style = {
       backhroundColor: 'white',
       font: 'inherit',
       border: '1px solid blue',
-      padding: '8px;',
+      padding: '8px',
       cursor: 'pointer',
       borderRadius: '8px'
 
@@ -57,21 +64,27 @@ class App extends Component { //no render method on functional components
         <h1>Hi, I'm a React App</h1>
         {/* same as below, however it returns a function call with an explicit return */}
         {/* not reccommended if we dont have to */}
-        <button style={style}
-          onClick={() => this.switchNameHandler('bananamama')}>Switch Name</button>
+        <button
+          style={style}
+          onClick={this.togglePersonsHandler}>Switch Name</button>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-          // added handler to this element. passing a  reference to the switchNameHandler
-          click={this.switchNameHandler.bind(this, 'BARKLEYMANGUEIRASANTO')}>My Hobbies : pizza</Person>
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          changed={this.nameChangedHandler} />
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age} />
+        {
+          this.state.showPersons === true ?
+            <div>
+              <Person
+                name={this.state.persons[0].name}
+                age={this.state.persons[0].age}
+                // added handler to this element. passing a  reference to the switchNameHandler
+                click={this.switchNameHandler.bind(this, 'BARKLEYMANGUEIRASANTO')}>My Hobbies : pizza</Person>
+              <Person
+                name={this.state.persons[1].name}
+                age={this.state.persons[1].age}
+                changed={this.nameChangedHandler} />
+              <Person
+                name={this.state.persons[2].name}
+                age={this.state.persons[2].age} />
+            </div> : null
+        }
       </div>
     );
   }
