@@ -89,6 +89,7 @@ class App extends Component { //no render method on functional components
           style={style}
           onClick={this.togglePersonsHandler}>Switch Name</button>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
+        {/* this helps keep our core template clean */}
         {persons}
       </div>
     );
