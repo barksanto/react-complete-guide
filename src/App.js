@@ -62,6 +62,9 @@ class App extends Component { //no render method on functional components
     if (this.state.showPersons) {
       persons = (
         <div>
+          {this.state.persons.map(person => {
+
+          })}
           <Person
             name={this.state.persons[0].name}
             age={this.state.persons[0].age}
