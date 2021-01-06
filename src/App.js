@@ -57,17 +57,10 @@ class App extends Component { //no render method on functional components
 
     };
 
-    return (
-      /* We will nest the rest of our components in this div also */
-      /* We render by using the same name of the component we imported*/
-      <div className="App">
-        <h1>Hi, I'm a React App</h1>
-        {/* same as below, however it returns a function call with an explicit return */}
-        {/* not reccommended if we dont have to */}
-        <button
-          style={style}
-          onClick={this.togglePersonsHandler}>Switch Name</button>
-        {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
+    let persons = null;
+
+    if (this.state.showPersons) {
+      persons = (
         <div>
           <Person
             name={this.state.persons[0].name}
@@ -82,6 +75,21 @@ class App extends Component { //no render method on functional components
             name={this.state.persons[2].name}
             age={this.state.persons[2].age} />
         </div>
+      )
+    }
+
+    return (
+      /* We will nest the rest of our components in this div also */
+      /* We render by using the same name of the component we imported*/
+      <div className="App">
+        <h1>Hi, I'm a React App</h1>
+        {/* same as below, however it returns a function call with an explicit return */}
+        {/* not reccommended if we dont have to */}
+        <button
+          style={style}
+          onClick={this.togglePersonsHandler}>Switch Name</button>
+        {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
+        {persons}
       </div>
     );
   }
