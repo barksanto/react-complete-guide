@@ -63,20 +63,10 @@ class App extends Component { //no render method on functional components
       persons = (
         <div>
           {this.state.persons.map(person => {
-
+            return <Person
+              name={person.name}
+              age={person.age} />
           })}
-          <Person
-            name={this.state.persons[0].name}
-            age={this.state.persons[0].age}
-            // added handler to this element. passing a  reference to the switchNameHandler
-            click={this.switchNameHandler.bind(this, 'BARKLEYMANGUEIRASANTO')}>My Hobbies : pizza</Person>
-          <Person
-            name={this.state.persons[1].name}
-            age={this.state.persons[1].age}
-            changed={this.nameChangedHandler} />
-          <Person
-            name={this.state.persons[2].name}
-            age={this.state.persons[2].age} />
         </div>
       )
     }
