@@ -39,6 +39,11 @@ class App extends Component { //no render method on functional components
     })
   }
 
+  deletePersonhandler = (personIndex) => {
+    const persons = this.state.persons;
+    persons.splice(personIndex, 1);
+    this.setState({ persons: persons });
+  }
 
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
@@ -62,11 +67,12 @@ class App extends Component { //no render method on functional components
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map(person => {
-            // return whwat we want to map this object into
+          {this.state.persons.map((person, index) => { // if we use more than one argument - must wrap in parenthesis
+            // return what we want to map this object into
             return <Person
               name={person.name}
-              age={person.age} />
+              age={person.age}
+              click={() => this.deletePersonhandler(index)} />
           })}
         </div>
       )
