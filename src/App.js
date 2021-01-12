@@ -63,6 +63,7 @@ class App extends Component { //no render method on functional components
       persons = (
         <div>
           {this.state.persons.map(person => {
+            // return whwat we want to map this object into
             return <Person
               name={person.name}
               age={person.age} />
