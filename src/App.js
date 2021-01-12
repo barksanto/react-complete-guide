@@ -40,7 +40,9 @@ class App extends Component { //no render method on functional components
   }
 
   deletePersonhandler = (personIndex) => {
-    const persons = this.state.persons;
+    // slice copies the old array and returns a new one store in persons const
+    // or we could use spread operator - const persons = [...this.state.persons]
+    const persons = this.state.persons.slice();
     persons.splice(personIndex, 1);
     this.setState({ persons: persons });
   }
