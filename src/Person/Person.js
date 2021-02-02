@@ -3,6 +3,12 @@ import './Person.css';
 
 // this is the preferred way to write functions.
 const person = (props) => {
+  const style = {
+    '@media (min-width: 500px)':{
+      width: '450px'
+    }
+  };
+  
   return (
     <div className="Person">
       {/* click is the name of the property we defined on the My Hobbies */}
