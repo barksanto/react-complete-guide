@@ -98,11 +98,14 @@ class App extends Component { //no render method on functional components
       style.backgroundColor = 'red';
     }
 
+    let classes = ['red', 'bold'].join(' ');
+
     return (
       /* We will nest the rest of our components in this div also */
       /* We render by using the same name of the component we imported*/
       <div className="App">
         <h1>Hi, I'm a React App</h1>
+        <p className={classes}> This is really working</p>
         {/* same as below, however it returns a function call with an explicit return */}
         {/* not reccommended if we dont have to */}
         <button
