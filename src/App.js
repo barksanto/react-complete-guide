@@ -95,6 +95,7 @@ class App extends Component { //no render method on functional components
           })}
         </div>
       )
+      style.backgroundColor = 'red';
     }
 
     return (
