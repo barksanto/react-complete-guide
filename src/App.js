@@ -29,12 +29,26 @@ class App extends Component { //no render method on functional components
     })
   }
 
-  nameChangedHandler = (event) => {
+  nameChangedHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(p => {
+      return p.id === id;
+    });
+
+    const person = {
+      ...this.state.persons[personIndex]
+    };
+
+    person.name = event.target.value;
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
+    this.setState({ persons: person })
+
     this.setState({
       persons: [
-        { name: "Barkley", age: 27 },
-        { name: event.target.value, age: 6 },
-        { name: "Mikayla", age: 20 }
+        { id: "blah", name: "Barkley", age: 27 },
+        { id: "chic", name: event.target.value, age: 6 },
+        { id: "aman", name: "Mikayla", age: 20 }
       ]
     })
   }
@@ -72,9 +86,11 @@ class App extends Component { //no render method on functional components
           {this.state.persons.map((person, index) => { // if we use more than one argument - must wrap in parenthesis
             // return what we want to map this object into
             return <Person
+              click={() => this.deletePersonhandler(index)}
               name={person.name}
               age={person.age}
-              click={() => this.deletePersonhandler(index)} />
+              key={person.id}
+              changed={(event) => this.nameChangedHandler(event, person.id)} />
           })}
         </div>
       )
@@ -89,7 +105,7 @@ class App extends Component { //no render method on functional components
         {/* not reccommended if we dont have to */}
         <button
           style={style}
-          onClick={this.togglePersonsHandler}>Switch Name</button>
+          onClick={this.togglePersonsHandler}>Toggle Button</button>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
         {/* this helps keep our core template clean */}
         {persons}
