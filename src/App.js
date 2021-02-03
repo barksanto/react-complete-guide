@@ -97,6 +97,7 @@ class App extends Component { //no render method on functional components
     // };
 
     let persons = null;
+    let btnClass = [classes.Button];
 
     if (this.state.showPersons) {
       persons = (
@@ -113,6 +114,7 @@ class App extends Component { //no render method on functional components
         </div>
       )
       // style.backgroundColor = 'red';
+      btnClass.push(classes.Red)
     }
 
     const assignedClasses = [];  //['red', 'bold'].join(' ');
@@ -134,7 +136,7 @@ class App extends Component { //no render method on functional components
         <button
           // style={style}
           // alt={this.state.showPersons}
-          className={classes.button}
+          className={btnClass.join(' ')}
           onClick={this.togglePersonsHandler}>Toggle Button</button>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
         {/* this helps keep our core template clean */}
