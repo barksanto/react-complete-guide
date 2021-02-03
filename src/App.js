@@ -84,16 +84,16 @@ class App extends Component { //no render method on functional components
 
   render() {
 
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      borderRadius: '8px'
+    // const style = {
+    //   backgroundColor: 'green',
+    //   color: 'white',
+    //   font: 'inherit',
+    //   border: '1px solid blue',
+    //   padding: '8px',
+    //   cursor: 'pointer',
+    //   borderRadius: '8px'
 
-    };
+    // };
 
     let persons = null;
 
@@ -111,7 +111,7 @@ class App extends Component { //no render method on functional components
           })}
         </div>
       )
-      style.backgroundColor = 'red';
+      // style.backgroundColor = 'red';
     }
 
     const classes = [];  //['red', 'bold'].join(' ');
@@ -130,10 +130,9 @@ class App extends Component { //no render method on functional components
         <p className={classes.join(' ')}> This is really working</p>
         {/* same as below, however it returns a function call with an explicit return */}
         {/* not reccommended if we dont have to */}
-        <button
-          style={style}
-          onClick={this.togglePersonsHandler}>Toggle Button</button>
-        <StyledButton />
+        <StyledButton
+          // style={style}
+          onClick={this.togglePersonsHandler}>Toggle Button</StyledButton>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
         {/* this helps keep our core template clean */}
         {persons}
