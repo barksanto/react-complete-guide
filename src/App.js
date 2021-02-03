@@ -97,7 +97,7 @@ class App extends Component { //no render method on functional components
     // };
 
     let persons = null;
-    let btnClass = [classes.Button];
+    let btnClass = [classes.button];
 
     if (this.state.showPersons) {
       persons = (
