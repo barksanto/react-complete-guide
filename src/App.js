@@ -12,6 +12,11 @@ const StyledButton = styled.button`
       padding: 8px;
       cursor: pointer;
       border-radius: 8px;
+
+      &:hover{
+        background-color: light-green;
+        color: black;
+      }
     `
 
 // app is our root component
@@ -79,16 +84,16 @@ class App extends Component { //no render method on functional components
 
   render() {
 
-    // const style = {
-    //   backgroundColor: 'green',
-    //   color: 'white',
-    //   font: 'inherit',
-    //   border: '1px solid blue',
-    //   padding: '8px',
-    //   cursor: 'pointer',
-    //   borderRadius: '8px'
+    const style = {
+      backgroundColor: 'green',
+      color: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer',
+      borderRadius: '8px'
 
-    // };
+    };
 
     let persons = null;
 
@@ -128,6 +133,7 @@ class App extends Component { //no render method on functional components
         <button
           style={style}
           onClick={this.togglePersonsHandler}>Toggle Button</button>
+        <StyledButton />
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
         {/* this helps keep our core template clean */}
         {persons}
