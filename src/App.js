@@ -3,21 +3,22 @@ import './App.css';
 // import Person compontnt from Person Folder using Person.js file
 import Person from './Person/Person';
 // import styled from 'styled-components';
+import classes from './App.css';
 
-const StyledButton = styled.button`
-      background-color: ${props => props.alt ? 'red' : 'green'};
-      color: white;
-      font: inherit;
-      border: 1px solid blue;
-      padding: 8px;
-      cursor: pointer;
-      border-radius: 8px;
+// const StyledButton = styled.button`
+//       background-color: ${props => props.alt ? 'red' : 'green'};
+//       color: white;
+//       font: inherit;
+//       border: 1px solid blue;
+//       padding: 8px;
+//       cursor: pointer;
+//       border-radius: 8px;
 
-      &:hover{
-        background-color: ${props => props.alt ? 'salmon' : 'lightblue'};
-        color: black;
-      }
-    `
+//       &:hover{
+//         background-color: ${props => props.alt ? 'salmon' : 'lightblue'};
+//         color: black;
+//       }
+//     `
 
 // app is our root component
 // class App extends Component {
@@ -114,26 +115,26 @@ class App extends Component { //no render method on functional components
       // style.backgroundColor = 'red';
     }
 
-    const classes = [];  //['red', 'bold'].join(' ');
+    const assignedClasses = [];  //['red', 'bold'].join(' ');
     if (this.state.persons.length <= 2) {
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
     if (this.state.persons.length <= 1) {
-      classes.push('bold')
+      assignedClasses.push(classes.bold)
     }
 
     return (
       /* We will nest the rest of our components in this div also */
       /* We render by using the same name of the component we imported*/
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi, I'm a React App</h1>
-        <p className={classes.join(' ')}> This is really working</p>
+        <p className={assignedClasses.join(' ')}> This is really working</p>
         {/* same as below, however it returns a function call with an explicit return */}
         {/* not reccommended if we dont have to */}
         <button
           // style={style}
           // alt={this.state.showPersons}
-          className="button"
+          className={classes.button}
           onClick={this.togglePersonsHandler}>Toggle Button</button>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
         {/* this helps keep our core template clean */}
