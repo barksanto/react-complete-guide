@@ -5,7 +5,7 @@ import Person from './Person/Person';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-      background-color: green;
+      background-color: ${props => props.alt ? 'red' : 'green'};
       color: white;
       font: inherit;
       border: 1px solid blue;
@@ -132,6 +132,7 @@ class App extends Component { //no render method on functional components
         {/* not reccommended if we dont have to */}
         <StyledButton
           // style={style}
+          alt={this.state.showPersons}
           onClick={this.togglePersonsHandler}>Toggle Button</StyledButton>
         {/* we only added click event to 1st paragraph - but event will trigger and make its changes*/}
         {/* this helps keep our core template clean */}
