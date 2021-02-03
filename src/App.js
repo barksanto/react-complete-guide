@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import './App.css';
 // import Person compontnt from Person Folder using Person.js file
 import Person from './Person/Person';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+      background-color: green;
+      color: white;
+      font: inherit;
+      border: 1px solid blue;
+      padding: 8px;
+      cursor: pointer;
+      border-radius: 8px;
+    `
 
 // app is our root component
 // class App extends Component {
@@ -68,16 +79,16 @@ class App extends Component { //no render method on functional components
 
   render() {
 
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      borderRadius: '8px'
+    // const style = {
+    //   backgroundColor: 'green',
+    //   color: 'white',
+    //   font: 'inherit',
+    //   border: '1px solid blue',
+    //   padding: '8px',
+    //   cursor: 'pointer',
+    //   borderRadius: '8px'
 
-    };
+    // };
 
     let persons = null;
 

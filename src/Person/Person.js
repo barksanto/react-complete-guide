@@ -17,11 +17,11 @@ const StyledDiv = styled.div`
 
 // this is the preferred way to write functions.
 const person = (props) => {
-  const style = {
-    '@media (min-width: 500px)': {
-      width: '450px'
-    }
-  };
+  // const style = {
+  //   '@media (min-width: 500px)': {
+  //     width: '450px'
+  //   }
+  // };
 
   return (
     // <div className="Person">
@@ -32,7 +32,7 @@ const person = (props) => {
       {/* This is how we can return what's inside of the <Person></Person> */}
       {/* <p>{props.children}</p> */}
       <input type="text" onChange={props.changed} value={props.name} />
-    {/* </div> */}
+      {/* </div> */}
     </StyledDiv>
   )
 }
