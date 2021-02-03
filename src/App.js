@@ -14,7 +14,7 @@ const StyledButton = styled.button`
       border-radius: 8px;
 
       &:hover{
-        background-color: light-green;
+        background-color: lightblue;
         color: black;
       }
     `
