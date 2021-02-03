@@ -14,7 +14,7 @@ const StyledButton = styled.button`
       border-radius: 8px;
 
       &:hover{
-        background-color: lightblue;
+        background-color: ${props => props.alt ? 'salmon' : 'lightblue'};
         color: black;
       }
     `
