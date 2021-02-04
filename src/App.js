@@ -48,6 +48,7 @@ class App extends Component { //no render method on functional components
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
+       //should be p.id 
       return p.id === id;
     });
 

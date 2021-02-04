@@ -1,7 +1,7 @@
 import React from "react"; // must import react in each component file
 // import './Person.css';
 import styled from 'styled-components';
-import classes from './App.css';
+// import classes from '../Person/App.css';
 
 
 // const StyledDiv = styled.div`
@@ -25,8 +25,9 @@ const person = (props) => {
   // };
 
   return (
+   
     // <div className="Person">
-    <div className={classes.Person}>
+    <div className='Person'>
       {/* click is the name of the property we defined on the My Hobbies */}
       {/* click is the name of the property we dfined in the element in App.js */}
       <p onClick={props.click}>I'm {props.name} and I am {props.age} years old!</p>
