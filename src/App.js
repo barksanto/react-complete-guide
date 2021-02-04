@@ -4,6 +4,7 @@ import './App.css';
 import Person from './Person/Person';
 // import styled from 'styled-components';
 import classes from './App.css';
+import ErrorBoundary from './ErrorBoundary';
 
 // const StyledButton = styled.button`
 //       background-color: ${props => props.alt ? 'red' : 'green'};
@@ -48,7 +49,7 @@ class App extends Component { //no render method on functional components
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
-       //should be p.id 
+      //should be p.id 
       return p.id === id;
     });
 
@@ -105,12 +106,13 @@ class App extends Component { //no render method on functional components
         <div>
           {this.state.persons.map((person, index) => { // if we use more than one argument - must wrap in parenthesis
             // return what we want to map this object into
-            return <Person
-              click={() => this.deletePersonhandler(index)}
-              name={person.name}
-              age={person.age}
-              key={person.id}
-              changed={(event) => this.nameChangedHandler(event, person.id)} />
+            return <ErrorBoundary key={person.id}>
+              <Person
+                click={() => this.deletePersonhandler(index)}
+                name={person.name}
+                age={person.age}
+                changed={(event) => this.nameChangedHandler(event, person.id)} />
+            </ErrorBoundary>
           })}
         </div>
       )
