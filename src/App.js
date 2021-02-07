@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 // import Person compontnt from Person Folder using Person.js file
-import Person from './Person/Person';
+import Person from './components/Persons/Person/Person';
 // import styled from 'styled-components';
 import classes from './App.css';
 import ErrorBoundary from './ErrorBoundary';
