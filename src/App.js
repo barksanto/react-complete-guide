@@ -86,7 +86,6 @@ class App extends Component { //no render method on functional components
   }
 
   render() {
-
     // const style = {
     //   backgroundColor: 'green',
     //   color: 'white',

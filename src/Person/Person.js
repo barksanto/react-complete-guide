@@ -18,12 +18,6 @@ import styled from 'styled-components';
 
 // this is the preferred way to write functions.
 const person = (props) => {
-  // const style = {
-  //   '@media (min-width: 500px)': {
-  //     width: '450px'
-  //   }
-  // };
-
   return (
    
     // <div className="Person">
